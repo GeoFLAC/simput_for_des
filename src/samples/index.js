@@ -13,6 +13,26 @@ export default [
     },
   },
   {
+    label: 'DES3D',
+    image: Images.des3d,
+    description: 'Long-term tectonic simulation code, Dynamic Earth Solver in 3D',
+    acknowledgement: '',
+    model: {
+      type: 'des3d',
+      data: {},
+    },
+  },
+  {
+    label: 'TEST DES3D',
+    image: Images.marker3d,
+    description: 'A Simput type used to test template files',
+    acknowledgement: '',
+    model: {
+      type: 'marker3d',
+      data: {},
+    },
+  },
+  {
     label: 'Address book',
     icon: 'mdi-contact-mail',
     description: 'Address book which generate vcs files',

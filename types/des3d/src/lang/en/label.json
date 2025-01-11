@@ -1,0 +1,259 @@
+{
+  "views": {
+    "sim_v": "Simulation-defining parameters",
+    "mesh_v": "Mesh",
+    "mesh_conditional_v": "Mesh: Conditional parameters",
+    "markers_v": "Marker-related parameters",
+    "control_v": "Simmulation-controlling parameters",
+    "bc_v": "Boundary Conditions",
+    "ic_v": "Initial Conditions",
+    "ic_conditional_v": "Initial Conditions: conditional parameters",
+    "mat_v": "Material properties"
+  },
+
+
+
+  "attributes": {
+    "sim_attr": {
+      "title": "Simulation",
+      "parameters": {
+        "modelname": "modelname",
+        "max_steps": "max_steps: Max number of steps",
+        "max_time_in_yr": "max_time_in_yr: Max time in year",
+        "output_step_interval": "output_step_interval: Interval between steps",
+        "output_time_interval_in_yr": "output_time_interval_in_yr: Interval between years",
+        "checkpoint_frame_interval": "checkpoint_frame_interval: Interval between checkpoint frames",
+        "is_restarting": "is_restarting: Dictates whether the model loops upon completion",
+        "restarting_from_modelname": "restarting_from_modelname: Restarting from modelname",
+        "restarting_from_frame": "restarting_from_frame: What frame model restarts from",
+        "has_initial_checkpoint": "has_inital_checkpoint: Whether the model has an initial checkpoint",
+        "has_marker_output": "has_marker_output: Whether model has output marker",
+        "has_output_during_remeshing": "has_output_during_remeshing: Whether model has output during remeshing",
+        "is_outputting_averaged_fields": "is_outputting_averaged_fields: Whether model outputs averaged fields"
+      }
+    },
+
+
+
+    "mesh_attr": {
+      "title": "mesh parameters",
+      "parameters": {
+        "meshing_verbosity": "meshing_verbosity",
+        "tetgen_optlevel": "tetgen_optlevel",
+        "xlength": "xlength: X-length of box (in meters)",
+        "ylength": "ylength: Y-length of box (in meters)",
+        "zlength": "zlength: Z-length of box (in meters)",
+        "resolution": "resolution",
+        "smallest_size": "smallest_size",
+        "largest_size": "largest_size", 
+        "min_angle": "min_angle",
+        "min_tet_angle": "min_tet_angle",
+        "max_ratio": "max_ratio",
+        "quality_check_step_interval": "quality_check_step_interval: How often model checks quality", 
+        "min_quality": "min_quality", 
+        "max_boundary_distortion": "max_boundary_distortion", 
+        "remeshing_option": "remeshing_option",
+        "is_discarding_internal_segments": "is_discarding_internal_segments", 
+        "mmg_debug": "mmg_debug", 
+        "mmg_verbose": "mmg_verbose", 
+        "mmg_hmax_factor": "mmg_hmax_factor", 
+        "mmg_hmin_factor": "mmg_hmin_factor", 
+        "mmg_hausd_factor": "mmg_hausd_factor"
+      }
+    },
+    
+
+    "mesh_conditional_attr": {
+      "title": "meshing_option",
+      "paramters": {
+        "meshing_option": "meshing_option"
+      }
+    },
+    "p_filename": {
+      "title": "poly_filename",
+      "parameters": {
+        "poly_filename": "poly_filename"
+      }
+    },
+    "ref_zonex": {
+      "title": "refined_zonex",
+      "parameters": {
+        "refined_zonex": "refined_zonex"
+      }
+    },
+    "ref_zoney": {
+      "title": "refined_zoney",
+      "parameters": {
+        "refined_zoney": "refined_zoney"
+      }
+    },
+    "ref_zonez": {
+      "title": "refined_zonez",
+      "parameters": {
+        "refined_zonez": "refined_zonez"
+      }
+    },
+
+
+
+
+
+
+    "markers_attr": {
+      "title": "markers",
+      "parameters": {
+        "init_marker_option": "init_marker_option",
+        "markers_per_element": "markers_per_element",
+        "init_marker_spacing": "init_marker_spacing",
+        "min_num_markers_in_element": "min_num_markers_in_element",
+        "replenishment_option": "replenishment_option",
+        "random_seed": "random_seed"
+      }
+    },
+
+
+
+    "control_attr": {
+      "title": "control",
+      "parameters": {
+        "gravity": "gravity",
+        "characteristic_speed": "characteristic_speed",
+        "is_quasi_static": "is_quasi_static",
+        "dt_fraction": "dt_fraction",
+        "fixed_dt": "fixed_dt",
+        "inertial_scaling": "inertial_scaling",
+        "damping_option": "damping_option",
+        "damping_factor": "damping_factor",
+        "ref_pressure_option": "ref_pressure_option",
+        "surface_process_option": "surface_process_option",
+        "surface_diffusivity": "surface_diffusivity",
+        "has_thermal_diffusion": "has_thermal_diffusion",
+        "has_hydration_processes": "has_hydration_processes",
+        "hydration_migration_speed": "hydration_migration_speed"
+      }
+    },
+
+
+    "bc_attr": {
+      "title": "bc",
+      "parameters": {
+        "vbc_x0": "vbc_x0",
+        "vbc_x1": "vbc_x1",
+        "vbc_val_x0": "vbc_val_x0",
+        "vbc_val_x1": "vbc_val_x1",
+        "vbc_y0": "vbc_y0",
+        "vbc_y1": "vbc_y1",
+        "vbc_val_y0": "vbc_val_y0",
+        "vbc_val_y1": "vbc_val_y1",
+        "vbc_z0": "vbc_z0",
+        "vbc_z1": "vbc_z1",
+        "vbc_val_z0": "vbc_val_z0",
+        "vbc_val_z1": "vbc_val_z1",
+        "vbc_n0": "vbc_n0",
+        "vbc_val_n0": "vbc_val_n0",
+        "vbc_n1": "vbc_n1",
+        "vbc_val_n1": "vbc_val_n1",
+        "vbc_n2": "vbc_n2",
+        "vbc_val_n2": "vbc_val_n2",
+        "vbc_n3": "vbc_n3",
+        "vbc_val_n3": "vbc_val_n3",
+        "has_wrinkler_foundation": "has_wrinkler_foundation",
+        "wrinkler_delta_rho": "wrinler_delta_rho",
+        "has_elastic_foundation": "has_elastic_foundation",
+        "elastic_foundation_constant": "elastic_foundation_constant",
+        "has_water_loading": "has_water_loading",
+        "surface_temperature": "surface_temperature",
+        "mantle_temperature": "mantle_temperature"
+      }
+    },
+
+
+
+
+    "ic_attr": {
+      "title": "ic",
+      "parameters":{
+        "mattype_option": "mattype_option",
+        "mattype_layer_depths": "mattype_layer_depths",
+        "weakzone_option": "weakzone_option",
+        "weakzone_plstrain": "weakzone_plstrain",
+        "weakzone_azimuth": "weakzone_azimuth",
+        "weakzone_inclination": "weakzone_inclination",
+        "weakzone_halfwidth": "weakzone_halfwidth",
+        "weakzone_y_min": "weakzone_y_min",
+        "weakzone_y_max": "weakzone_y_max",
+        "weakzone_depth_min": "weakzone_depth_min",
+        "weakzone_depth_max": "weakzone_depth_max",
+        "weakzone_xcenter": "weakzone_xcenter",
+        "weakzone_ycenter": "weakzone_ycenter",
+        "weakzone_zcenter": "weakzone_zcenter",
+        "weakzone_xsemi_axis": "weakzone_xsemi_axis",
+        "weakzone_ysemi_axis": "weakzone_ysemi_axis",
+        "weakzone_zsemi_axis": "weakzone_zsemi_axis",
+        "oceanic_plate_age_in_yr": "oceanic_plate_age_in_yr",
+        "isostasy_adjustment_time_in_yr": "isostasy_adjustment_time_in_yr"
+      }
+    },
+
+
+
+    "ic_conditional_attr": {
+      "title": "conditional parameters from ic",
+      "parameters":{
+        "temperature_option": "temperature_option"
+      }
+    },
+    "Temp_fname": {
+      "title": "Temp_filename",
+      "parameters": {
+        "Temp_filename": "Temp_filename"
+      }
+    },
+    "Nodes_fname": {
+      "title": "Nodes_filename",
+      "parameters": {
+        "Nodes_filename": "Nodes_filename"
+      }
+    },
+    "Connectivity_fname": {
+      "title": "Connectivity_filename",
+      "parameters": {
+        "Connectivity_filename": "Connectivity_filename"
+      }
+    },
+   
+
+
+
+    "mat_attr": {
+      "title": "mat: bracketed parameters, starting with /'rho0/' and ending with /'dilation_angle1/' should have either 1 value or as many values as the integer entered in 'num_materials'. Multiple values must be seperated by commas.",
+      "parameters": {
+        "rheology_type": "rheology_type",
+        "is_plane_strain": "is_plane_strain",
+        "phase_change_option": "phase_change_option",
+        "num_materials": "num_materials",
+        "rho0": "rho0",
+        "alpha": "alpha",
+        "bulk_modulus": "bulk_modus",
+        "shear_modulus": "shear_modulus",
+        "visc_exponent": "visc_exponent",
+        "visc_coefficient": "visc_coefficient",
+        "visc_activation_energy": "visc_activation_energy",
+        "heat_capacity": "heat_capacity",
+        "therm_cond": "therm_cond",
+        "pls0": "pls_0",
+        "pls1": "pls1",
+        "cohesion0": "cohesion0",
+        "cohesion1": "cohesion1",
+        "friction_angle0": "friction_angle0",
+        "friction_angle1": "friction_angle1",
+        "dilation_angle0": "dilation_angle0",
+        "dilation_angle1": "dilation_angle1",
+        "max_viscosity": "max_viscosity",
+        "min_viscosity": "min_viscosity",
+        "max_tension": "max_tension",
+        "max_thermal_diffusivity": "max_thermal_diffusivity"
+      }
+    }
+  }
+}
