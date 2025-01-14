@@ -11,7 +11,10 @@ $ cd simput
 $ npm install
 $ npm run dev
 ```
-If a web page is not automatically opened, open a web browser and go to `localhost:9999`
+If a web page is not automatically opened, launch a web browser and go to `localhost:9999`
+### Screenshot of the landing page
+![Screenshot 2025-01-14 083958](https://github.com/user-attachments/assets/33d13fc9-0ba7-4ddd-aec2-eb29eeeaf014)
+
 
 ## Installation
 
