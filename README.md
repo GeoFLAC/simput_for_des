@@ -4,6 +4,15 @@
 
 To provide a simple way to write input simpulation files.
 
+## Quick build for development
+```sh
+$ git clone --recursive https://github.com/Kitware/simput.git
+$ cd simput
+$ npm install
+$ npm run dev
+```
+If a web page is not automatically opened, open a web browser and go to `localhost:9999`
+
 ## Installation
 
 ```sh
