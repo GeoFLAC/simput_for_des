@@ -6,8 +6,9 @@ To provide a simple way to write input simpulation files.
 
 ## Quick build for development
 ```sh
-$ git clone --recursive https://github.com/Kitware/simput.git
-$ cd simput
+$ git clone --recursive https://github.com/GeoFLAC/simput_for_des.git
+$ cd simput_for_des
+$ export NODE_OPTIONS=--openssl-legacy-provider
 $ npm install
 $ npm run dev
 ```
@@ -67,8 +68,9 @@ There are a few supplied demos in the folder `types`, each have their own README
 ## Development
 
 ```sh
-$ git clone --recursive https://github.com/Kitware/simput.git
-$ cd simput
+$ git clone --recursive https://github.com/GeoFLAC/simput_for_des.git
+$ cd simput_for_des
+$ export NODE_OPTIONS=--openssl-legacy-provider
 $ npm install
 $ npm run build
 $ npm link
