@@ -43,9 +43,11 @@ jobs:
           # The output should be a directory (e.g., 'dist', 'build', 'public')
           # containing index.html and other static assets.
           export NODE_OPTIONS=--openssl-legacy-provider
-          npm run type:des3d -- -m
-          npm install -g simput
-          Simput -p
+          npm install
+          npm run dev
+          # npm run type:des3d -- -m
+          # npm install -g simput
+          # Simput -p
 
           # IF YOUR SIMPUT APP IS ALREADY STATIC FILES IN A SPECIFIC FOLDER:
           # This step might just be ensuring the files are in the expected location.
