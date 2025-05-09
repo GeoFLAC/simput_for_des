@@ -26,14 +26,17 @@ jobs:
         uses: actions/checkout@v4
 
       # Add setup steps if needed (e.g., Node.js, Python)
-      # - name: Set up Node.js
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: '18' # Or your required version
-      #     cache: 'yarn' # Or 'npm'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # Or your required version
+          # cache: 'yarn' # Or 'npm'
 
       # - name: Install dependencies
       #   run: yarn install # Or npm ci
+
+      - name: Install Simput CLI globally
+        run: npm install -g simput # Or the specific package name if it's different
 
       # --- THIS IS THE CRITICAL PART TO CUSTOMIZE ---
       - name: Build/Prepare Simput application
