@@ -32,6 +32,7 @@
     "commit": "git cz",
     "semantic-release": "semantic-release",
     "types": "npm run type:nwchem -- -m && npm run type:nwchem-neb -- -m && npm run type:openfoam-periodic -- -m && npm run type:openfoam-tutorials -- -m && npm run type:openfoam-windtunnel -- -m && npm run type:oscillator -- -m && npm run type:pyfr -- -m && npm run type:test -- -m && npm run type:vcard -- -m && npm run type:vera -- -m && npm run type:conus -- -m",
+    "type:des3d": "node ./src/cli/simput-cli.js -c ./types/des3d/src -o ./static/types -t des3d",
     "type:nwchem": "node ./src/cli/simput-cli.js -c ./types/nwchem/src -o ./static/types -t nwchem",
     "type:nwchem-neb": "node ./src/cli/simput-cli.js -c ./types/nwchem-neb/src -o ./static/types -t nwchem-neb",
     "type:openfoam-periodic": "node ./src/cli/simput-cli.js -c ./types/openfoam-periodic/src -o ./static/types -t openfoam-periodic",
@@ -63,7 +64,8 @@
     "vue-style-loader": "4.1.0",
     "vue-template-compiler": "2.5.16",
     "vuetify": "1.1.10",
-    "vuex": "3.0.1"
+    "vuex": "3.0.1",
+    "webpack-dev-server": "^3.11.3"
   },
   "devDependencies": {
     "eslint-plugin-vue": "4.5.0",

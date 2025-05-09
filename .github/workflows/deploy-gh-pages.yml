@@ -1,0 +1,83 @@
+name: Deploy Simput App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Or whatever your main development branch is
+  workflow_dispatch: # Allows manual triggering
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Add setup steps if needed (e.g., Node.js, Python)
+      # - name: Set up Node.js
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: '18' # Or your required version
+      #     cache: 'yarn' # Or 'npm'
+
+      # - name: Install dependencies
+      #   run: yarn install # Or npm ci
+
+      # --- THIS IS THE CRITICAL PART TO CUSTOMIZE ---
+      - name: Build/Prepare Simput application
+        run: |
+          # If your Simput app has a build command, run it here.
+          # For example: npm run build
+          # The output should be a directory (e.g., 'dist', 'build', 'public')
+          # containing index.html and other static assets.
+          export NODE_OPTIONS=--openssl-legacy-provider
+          npm run type:des3d -- -m
+          npm install -g simput
+          Simput -p
+
+          # IF YOUR SIMPUT APP IS ALREADY STATIC FILES IN A SPECIFIC FOLDER:
+          # This step might just be ensuring the files are in the expected location.
+          # For example, if your app is in a folder called 'app_output':
+          echo "Assuming Simput app static files are in 'app_output' or similar"
+          # mkdir -p ./_site # Ensure the target directory for upload artifact exists
+          # cp -r ./app_output/* ./_site/ # Example if files are in app_output
+
+          # IF THE ROOT OF THE REPO IS THE APP ITSELF:
+          # You might not need a build step here, but you'll need to tell
+          # the `upload-pages-artifact` action where to find the files (usually root).
+          # For Simput, often the core files are in a specific directory.
+          # Let's assume your Simput app's entry point (index.html) and related assets
+          # are in a directory called `simput_app_dist` after any necessary preparation.
+          # Replace `simput_app_dist` with your actual directory name.
+          # If no build is needed and files are at root, this step might be minimal.
+          echo "Preparing files for GitHub Pages deployment..."
+          # Example: If your app is in the root or a specific folder like 'dist' or 'public'
+          # If your app is in 'dist', for example:
+          # mv dist _site # Move built files to a common artifact name if needed by upload action
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Path to the directory containing your static Simput application files
+          # This MUST be the directory that contains your index.html at its root.
+          # If your build step outputs to 'dist', use 'dist'.
+          # If your app's static files are in the root, use '.'.
+          # If your app is in a folder e.g. 'public_html', use 'public_html'
+          path: '.' # DEFAULT: assumes index.html is at the root of the repo.
+                    # CHANGE THIS if your app's index.html is in a subfolder (e.g., 'dist', 'build', 'public_html')
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
